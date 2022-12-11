@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <title>AngularJS MVC</title>
+</head>
+<body>
+    <h2>AngularJs Mvc Example</h2>
+    <div ng-app="testApp" ng-controller="appController">
+        Enter first name:
+        <input type="text" ng-model="student.firstName">
+        <br><br>
+        Enter last name:
+        <input type="text" ng-model="student.lastName">
+        <br><br>
+        Entered value: {{student.fullName()}}
+    </div>
+    <script>
+        var mainApp =angular.module("testAppp",[]);
+        mainApp.controller('appController',function($Scope){
+            $scope.student ={
+                firstName: "Nguyen",
+                lastName: "Phu Trong",
+                fullName: function(){
+                    var studentObject = $scope.student;
+                    return studentObject.firstName + " "+ studentObject.lastName;
+                }
+            };
+        });
+    </script>
+
+
+</body>
+</html>
